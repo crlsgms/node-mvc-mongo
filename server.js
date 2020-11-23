@@ -17,13 +17,19 @@ mongoose.connect('mongodb://localhost/paciente', {
     useUnifiedTopology: true
 })
 
-// importa o controller do paciente
+// importa os controllers
 let pacienteController = require('./controllers/paciente.controller')
+let medicoController = require('./controllers/medico.controller')
 
 // cria as rotas para o paciente
 servidor.get('/paciente', pacienteController.consulta)
-
 servidor.post('/paciente', pacienteController.insere)
+servidor.delete('/paciente/:id', pacienteController.remove)
+servidor.put('/paciente/:id', pacienteController.atualiza)
+
+// cria as rotas para o medico
+servidor.get('/medico', medicoController.consulta)
+servidor.post('/medico', medicoController.insere)
 
 // sobe o servidor
 servidor.listen ( 3003, () => {
