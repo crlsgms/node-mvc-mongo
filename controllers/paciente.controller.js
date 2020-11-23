@@ -11,7 +11,7 @@ let pacienteController = {
       peso: req.body.peso,
       altura: req.body.altura,
       temperatura: req.body.temperatura,
-      medico: req.body.medico
+      medico: req.body.medico,
     });
     // salva no banco de dados
     paciente.save();
@@ -19,9 +19,12 @@ let pacienteController = {
     res.json(paciente);
   },
   consulta: async (req, res) => {
-    Paciente.find().then((pacientes) => {
-      res.json(pacientes); // retorna todos os pacientes
-    });
+    Paciente.find()
+      .populate("medico") // popula o medico com o id
+      .exec() //roda o populate
+      .then((pacientes) => {
+        res.json(pacientes); // retorna todos os pacientes
+      });
   },
   remove: async (req, res) => {
     Paciente.deleteOne({ _id: req.params.id }).then((resultado) => {

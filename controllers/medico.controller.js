@@ -7,6 +7,7 @@ let medicoController = {
       nome: req.body.nome,
       crm: req.body.crm,
       especialidade: req.body.especialidade,
+      pacientes: req.body.pacientes
     });
     // salva no banco de dados
     medico.save();
@@ -14,8 +15,11 @@ let medicoController = {
     res.json(medico);
   },
   consulta: async (req, res) => {
-    Medico.find().then((medicos) => {
-      res.json(medicos); // retorna todos os medicos
+    Medico.find()
+    .populate('pacientes')
+    .exec()
+    .then((medicos) => {
+      res.json(medicos); // retorna todos os pacientes
     });
   },
 };

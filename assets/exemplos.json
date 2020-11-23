@@ -15,12 +15,29 @@
         "altura": 1.7,
         "temperatura": 36,
         "__v": 0
+    },
+    {
+        "_id": "5fbbcb9ee95dc58e3367b55a",
+        "nome": "Fulano de Tal",
+        "peso": 60,
+        "altura": 1.6,
+        "temperatura": 36.2,
+        "medico": {
+            "pacientes": [],
+            "_id": "5fbbbff3d5e0d772b5523a68",
+            "nome": "Dr. Siqueira",
+            "crm": 548648,
+            "especialidade": "ortopedista",
+            "__v": 0
+        },
+        "__v": 0
     }
 ]
 
 #medicos
 [
     {
+        "pacientes": [],
         "_id": "5fbbbff3d5e0d772b5523a68",
         "nome": "Dr. Siqueira",
         "crm": 548648,
@@ -28,10 +45,36 @@
         "__v": 0
     },
     {
+        "pacientes": [],
         "_id": "5fbbc01ed5e0d772b5523a69",
         "nome": "Dr. Vieira",
         "crm": 1248648,
         "especialidade": "pediatra",
+        "__v": 0
+    },
+    {
+        "pacientes": [
+            {
+                "_id": "5fbbb800690a385f4783d917",
+                "nome": "Eduardo Balbim",
+                "peso": 80,
+                "altura": 1.8,
+                "temperatura": 36.2,
+                "__v": 0
+            },
+            {
+                "_id": "5fbbb8f3690a385f4783d918",
+                "nome": "Carlos Gomes",
+                "peso": 76,
+                "altura": 1.7,
+                "temperatura": 36,
+                "__v": 0
+            }
+        ],
+        "_id": "5fbbd897e7e4b8aa4cb77634",
+        "nome": "Dra. Silvana",
+        "crm": 548787,
+        "especialidade": "otorrinolaringologista",
         "__v": 0
     }
 ]
